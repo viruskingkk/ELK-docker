@@ -1,15 +1,15 @@
 # Elastic stack (ELK) on Docker
 
 
-## Requirements
+＃＃ 要求
 
-### Host setup
+###主機設置
 
 * [Docker](https://www.docker.com/community-edition#/download) version **17.05+**
 * [Docker Compose](https://docs.docker.com/compose/install/) version **1.6.0+**
 * 1 GB of RAM
 
-By default, the stack exposes the following ports:
+默認情況下，公開以下端口
 * 5000: Logstash TCP input
 * 9200: Elasticsearch HTTP
 * 9300: Elasticsearch TCP transport
@@ -20,13 +20,11 @@ By default, the stack exposes the following ports:
 
 #### Windows
 
-Ensure the [Shared Drives][win-shareddrives] feature is enabled for the `C:` drive.
+確保為C：啟用 [Shared Drives] .
 
 #### macOS
 
-The default Docker for Mac configuration allows mounting files from `/Users/`, `/Volumes/`, `/private/`, and `/tmp`
-exclusively. Make sure the repository is cloned in one of those locations or follow the instructions from the
-[documentation][mac-mounts] to add more locations.
+默認的Docker for Mac配置允許掛載來自`/ Users /`，`/ Volumes /`，`/ private /`和`/ tmp`的文件. 確保將存儲庫克隆到其中一個位置或按照說明中的說明進行操作[documentation][mac-mounts] 添加。.
 
 ## Usage
 
@@ -38,10 +36,9 @@ Clone this repository, then start the stack using Docker Compose:
 $ docker-compose up
 ```
 
-You can also run all services in the background (detached mode) by adding the `-d` flag to the above command.
+你還可以通過在上面的命令中添加`-d`來在後台運行所有服務.
 
-> :information_source: You must run `docker-compose build` first whenever you switch branch or update a base image.
-
+information_source：每當切換分支或更新基本映像時，必須首先運行`docker-compose build`
 
 
 ## Initial setup
@@ -173,5 +170,3 @@ $ docker stack services elk
 
 > :information_source: To scale Elasticsearch in Swarm mode, configure *zen* to use the DNS name `tasks.elasticsearch`
 instead of `elasticsearch`.
-
-# ELK-docker
